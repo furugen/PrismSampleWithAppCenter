@@ -1,0 +1,27 @@
+﻿<Window x:Class="PrismSampleWithAppCenter.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525">
+    <Window.Resources>
+        <!-- 全てのButtonのクリックイベントを監視 -->
+        <Style TargetType="Button">
+            <EventSetter Event="Click" Handler="Button_Click"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Button Command="{Binding OnNavigateToPageACommand}">画面Aを表示</Button>
+            <Button Command="{Binding OnNavigateToPageBCommand}">画面Bを表示</Button>
+            <Button Command="{Binding OnNavigateToPageCCommand}">画面Cを表示</Button>
+        </StackPanel>
+        
+        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>
+</Window>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="PageA.Views.PageAView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <StackPanel>
+        <TextBlock FontSize="40">PageA</TextBlock>
+        <Button x:Name="buttonSearch">検索</Button>
+        <Button x:Name="buttonEntry">登録</Button>
+        <Button x:Name="buttonUpdate">更新</Button>
+    </StackPanel>
+</UserControl>
